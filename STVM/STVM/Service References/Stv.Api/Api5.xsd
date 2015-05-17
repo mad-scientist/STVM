@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Star" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Star" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" />
+  <xs:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="StarList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q1:ListResponseOfStarmnupBOKf">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StarList" nillable="true" type="tns:StarList" />
+  <xs:complexType name="ArrayOfStar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Star" nillable="true" type="tns:Star" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStar" nillable="true" type="tns:ArrayOfStar" />
+  <xs:complexType name="Star">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Star" nillable="true" type="tns:Star" />
+  <xs:complexType name="StarDetailList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q2:ListResponseOfStarDetailmnupBOKf">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StarDetailList" nillable="true" type="tns:StarDetailList" />
+  <xs:complexType name="ArrayOfStarDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StarDetail" nillable="true" type="tns:StarDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStarDetail" nillable="true" type="tns:ArrayOfStarDetail" />
+  <xs:complexType name="StarDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Star">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AltName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Awards" nillable="true" type="tns:ArrayOfStarAward">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Birthplace" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DiedDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Diedplace" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="HasDetailInfo" type="xs:boolean" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Images" nillable="true" type="q3:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsHighlight" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Links" nillable="true" type="tns:ArrayOfStarLink">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TextHTML" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StarDetail" nillable="true" type="tns:StarDetail" />
+  <xs:complexType name="ArrayOfStarAward">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StarAward" nillable="true" type="tns:StarAward" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStarAward" nillable="true" type="tns:ArrayOfStarAward" />
+  <xs:complexType name="StarAward">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StarAward" nillable="true" type="tns:StarAward" />
+  <xs:complexType name="ArrayOfStarLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StarLink" nillable="true" type="tns:StarLink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStarLink" nillable="true" type="tns:ArrayOfStarLink" />
+  <xs:complexType name="StarLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StarLink" nillable="true" type="tns:StarLink" />
+</xs:schema>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;STV_Api_v2_Endpoint&quot; /&gt;" bindingType="basicHttpBinding" name="STV_Api_v2_Endpoint" />
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;STV_Api_v2_Endpoint_Secure&quot;&gt;&lt;security mode=&quot;Transport&quot; /&gt;&lt;/Data&gt;" bindingType="basicHttpBinding" name="STV_Api_v2_Endpoint_Secure" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://stv-api-06.stv.gonamic.rgb/v2/Api.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;STV_Api_v2_Endpoint_Secure&quot; contract=&quot;Stv.Api.IApi&quot; name=&quot;STV_Api_v2_Endpoint_Secure&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://stv-api-06.stv.gonamic.rgb/v2/Api.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;STV_Api_v2_Endpoint_Secure&quot; contract=&quot;Stv.Api.IApi&quot; name=&quot;STV_Api_v2_Endpoint_Secure&quot; /&gt;" contractName="Stv.Api.IApi" name="STV_Api_v2_Endpoint_Secure" />
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://api.save.tv/v2/Api.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;STV_Api_v2_Endpoint&quot; contract=&quot;Stv.Api.IApi&quot; name=&quot;STV_Api_v2_Endpoint&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://api.save.tv/v2/Api.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;STV_Api_v2_Endpoint&quot; contract=&quot;Stv.Api.IApi&quot; name=&quot;STV_Api_v2_Endpoint&quot; /&gt;" contractName="Stv.Api.IApi" name="STV_Api_v2_Endpoint" />
+  </endpoints>
+</configurationSnapshot>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Session" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Session" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" />
+  <xs:complexType name="Session">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q1:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Session" nillable="true" type="tns:Session" />
+</xs:schema>

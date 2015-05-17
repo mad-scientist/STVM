@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Message" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Message" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" />
+  <xs:complexType name="MessageList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q1:ListResponseOfMessageI_Sidu2gA">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MessageList" nillable="true" type="tns:MessageList" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+</xs:schema>

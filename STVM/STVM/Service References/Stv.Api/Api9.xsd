@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.StaticData" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.StaticData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" />
+  <xs:complexType name="BufferTimeList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q1:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BufferTimeAfter" nillable="true" type="q2:ArrayOfint" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BufferTimeBefore" nillable="true" type="q3:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BufferTimeList" nillable="true" type="tns:BufferTimeList" />
+  <xs:complexType name="ErrorCodeList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q4:ListResponseOfErrorCodeQ_S7E55Ui">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ErrorCodeList" nillable="true" type="tns:ErrorCodeList" />
+  <xs:complexType name="ArrayOfErrorCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ErrorCode" nillable="true" type="tns:ErrorCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfErrorCode" nillable="true" type="tns:ArrayOfErrorCode" />
+  <xs:complexType name="ErrorCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorCode" nillable="true" type="tns:ErrorCode" />
+  <xs:complexType name="TvCategoryList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q5:ListResponseOfTvCategoryQ_S7E55Ui">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TvCategoryList" nillable="true" type="tns:TvCategoryList" />
+  <xs:complexType name="ArrayOfTvCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TvCategory" nillable="true" type="tns:TvCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTvCategory" nillable="true" type="tns:ArrayOfTvCategory" />
+  <xs:complexType name="TvCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TvSubCategories" nillable="true" type="tns:ArrayOfTvSubCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TvCategory" nillable="true" type="tns:TvCategory" />
+  <xs:complexType name="ArrayOfTvSubCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TvSubCategory" nillable="true" type="tns:TvSubCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTvSubCategory" nillable="true" type="tns:ArrayOfTvSubCategory" />
+  <xs:complexType name="TvSubCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TvSubCategory" nillable="true" type="tns:TvSubCategory" />
+  <xs:complexType name="TvStationGroupList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q6:ListResponseOfTvStationGroupQ_S7E55Ui">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TvStationGroupList" nillable="true" type="tns:TvStationGroupList" />
+  <xs:complexType name="ArrayOfTvStationGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TvStationGroup" nillable="true" type="tns:TvStationGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTvStationGroup" nillable="true" type="tns:ArrayOfTvStationGroup" />
+  <xs:complexType name="TvStationGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TvStations" nillable="true" type="tns:ArrayOfTvStation">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TvStationGroup" nillable="true" type="tns:TvStationGroup" />
+  <xs:complexType name="ArrayOfTvStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TvStation" nillable="true" type="tns:TvStation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTvStation" nillable="true" type="tns:ArrayOfTvStation" />
+  <xs:complexType name="TvStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LargeImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoDetailsAfterBroadcast" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Position" type="xs:int" />
+      <xs:element minOccurs="0" name="TransparentImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TvStation" nillable="true" type="tns:TvStation" />
+  <xs:complexType name="TvStationList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q7:ListResponseOfTvStationQ_S7E55Ui">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TvStationList" nillable="true" type="tns:TvStationList" />
+  <xs:complexType name="ShopConfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q8:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Configuration" nillable="true" type="q9:ArrayOfKeyValueOfstringstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ShopConfig" nillable="true" type="tns:ShopConfig" />
+</xs:schema>

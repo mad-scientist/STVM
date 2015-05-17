@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Download" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Download" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" />
+  <xs:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="SimultaneousDownloadConnection">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q1:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+          <xs:element minOccurs="0" name="SegmentCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SimultaneousDownloadConnection" nillable="true" type="tns:SimultaneousDownloadConnection" />
+  <xs:complexType name="StreamingUrl">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q2:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DownloadUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RecordingFormatID" type="xs:int" />
+          <xs:element minOccurs="0" name="SizeMB" type="xs:int" />
+          <xs:element minOccurs="0" name="View2Url" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ViewUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StreamingUrl" nillable="true" type="tns:StreamingUrl" />
+  <xs:complexType name="ExtendedStreamingUrl">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StreamingUrl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StreamParts" nillable="true" type="tns:ArrayOfStreamPart" />
+          <xs:element minOccurs="0" name="TelecastCutEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TelecastCutStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="VideoFiles" nillable="true" type="tns:ArrayOfVideoFile" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExtendedStreamingUrl" nillable="true" type="tns:ExtendedStreamingUrl" />
+  <xs:complexType name="ArrayOfStreamPart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StreamPart" type="tns:StreamPart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStreamPart" nillable="true" type="tns:ArrayOfStreamPart" />
+  <xs:complexType name="StreamPart">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StreamPart" nillable="true" type="tns:StreamPart" />
+  <xs:complexType name="ArrayOfVideoFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VideoFile" nillable="true" type="tns:VideoFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVideoFile" nillable="true" type="tns:ArrayOfVideoFile" />
+  <xs:complexType name="VideoFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CutPoints" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FilePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VideoFile" nillable="true" type="tns:VideoFile" />
+  <xs:complexType name="ArrayOfHdTvStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HdTvStation" nillable="true" type="tns:HdTvStation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHdTvStation" nillable="true" type="tns:ArrayOfHdTvStation" />
+  <xs:complexType name="HdTvStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TvStationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HdTvStation" nillable="true" type="tns:HdTvStation" />
+</xs:schema>

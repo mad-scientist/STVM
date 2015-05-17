@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>STVM</RootNamespace>
     <AssemblyName>STVM</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,9 +32,25 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>NewLogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet">
+      <HintPath>..\packages\SSH.NET.2013.4.7\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.1.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,16 +59,71 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TMDbLib">
+      <HintPath>..\packages\TMDbLib.0.7.7\lib\net40\TMDbLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Data.cs" />
+    <Compile Include="Dialogs\fmDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Dialogs\fmDelete.Designer.cs" />
+    <Compile Include="Dialogs\fmLogin.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dialogs\fmLogin.Designer.cs" />
+    <Compile Include="Download\dlmBase.cs" />
+    <Compile Include="Download\dlmExternal.cs" />
+    <Compile Include="Download\dlmInternal.cs" />
+    <Compile Include="Download\dlmJDownloader.cs" />
+    <Compile Include="Download\dlmSynology.cs" />
+    <Compile Include="Download\Downloader.cs" />
+    <Compile Include="Download\DownloadHandler.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="fmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmMain.Designer.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="ListViewSorter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Stv.Api\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsWrapper.cs" />
+    <Compile Include="Stv\StvFavorites.cs" />
+    <Compile Include="Stv\StvHTTP.cs" />
+    <Compile Include="Stv\StvWrapper.cs" />
+    <Compile Include="Stv\StvWrapperData.cs" />
+    <Compile Include="TxdbLink.cs" />
+    <Compile Include="Wrapper\fmTvdbEpisodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wrapper\fmTvdbEpisodes.Designer.cs" />
+    <Compile Include="Wrapper\httpRequest.cs" />
+    <Compile Include="Wrapper\JdlWrapper.cs" />
+    <Compile Include="Wrapper\LocalWrapper.cs" />
+    <Compile Include="Wrapper\SynoWrapper.cs" />
+    <Compile Include="Wrapper\TmdbWrapper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wrapper\TmdbWrapper.Designer.cs" />
+    <Compile Include="Wrapper\TvdbWrapper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wrapper\TvdbWrapper.designer.cs" />
+    <Compile Include="Wrapper\WunschlisteWrapper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wrapper\WunschlisteWrapper.Designer.cs" />
+    <Compile Include="Wrapper\XbmcWrapper.cs" />
+    <EmbeddedResource Include="Dialogs\fmDelete.resx" />
+    <EmbeddedResource Include="Dialogs\fmLogin.resx" />
+    <EmbeddedResource Include="fmMain.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -60,7 +132,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Wrapper\fmTvdbEpisodes.resx" />
+    <EmbeddedResource Include="Wrapper\TmdbWrapper.resx" />
+    <EmbeddedResource Include="Wrapper\TvdbWrapper.resx" />
+    <EmbeddedResource Include="Wrapper\WunschlisteWrapper.resx" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -70,9 +148,149 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\Stv.Api\Api.wsdl" />
+    <None Include="Service References\Stv.Api\Api.xsd" />
+    <None Include="Service References\Stv.Api\Api1.wsdl" />
+    <None Include="Service References\Stv.Api\Api1.xsd" />
+    <None Include="Service References\Stv.Api\Api10.xsd" />
+    <None Include="Service References\Stv.Api\Api11.xsd" />
+    <None Include="Service References\Stv.Api\Api12.xsd" />
+    <None Include="Service References\Stv.Api\Api13.xsd" />
+    <None Include="Service References\Stv.Api\Api2.xsd" />
+    <None Include="Service References\Stv.Api\Api3.xsd" />
+    <None Include="Service References\Stv.Api\Api4.xsd" />
+    <None Include="Service References\Stv.Api\Api5.xsd" />
+    <None Include="Service References\Stv.Api\Api6.xsd" />
+    <None Include="Service References\Stv.Api\Api7.xsd" />
+    <None Include="Service References\Stv.Api\Api8.xsd" />
+    <None Include="Service References\Stv.Api\Api9.xsd" />
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.AdFree.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.BufferTimeList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.ChannelCreate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.ChannelList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.ChannelTelecastList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.ChannelTimeFrameList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.ErrorCodeList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.ExtendedStreamingUrl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.HdTvStationList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.LoggedIn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.Login.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.MessageList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.RecordingFormatList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.RecordList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.Session.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.ShopConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.SimultaneousDownloadConnection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.StarDetailList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.StarList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.StreamingUrl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.SuccessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.TelecastDetailList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.TelecastList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.TvCategoryList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.TvStationGroupList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.TvStationList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.UserStatusRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.UserUuid.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.VideoArchiveDeltaList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Stv.Api\STVM.Stv.Api.VideoArchiveList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Stv.Api\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Stv.Api\Api.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Stv.Api\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Stv.Api\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Stv.Api\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Download\NewLogo.ico" />
+    <Content Include="NewLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TvdbLib.0.8\TvdbLib.csproj">
+      <Project>{23c34cf0-4e66-4f02-9edc-83f292c6005c}</Project>
+      <Name>TvdbLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

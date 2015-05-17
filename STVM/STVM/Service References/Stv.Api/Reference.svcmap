@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="43e2c7f3-7e41-41f2-b0de-57b2820f35c8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://api.save.tv/v2/Api.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Api.wsdl" MetadataType="Wsdl" ID="05b08050-01f2-4ddc-b839-480d2ad0f1f8" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Api.xsd" MetadataType="Schema" ID="a05e5635-c518-44eb-b49d-e3b189e226f6" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd10" />
+    <MetadataFile FileName="Api1.xsd" MetadataType="Schema" ID="eb11495c-2f51-4c98-905b-23d408ea86ef" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd2" />
+    <MetadataFile FileName="Api2.xsd" MetadataType="Schema" ID="0ebb6629-028c-4fe9-94fd-ce043dcbcd6e" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd6" />
+    <MetadataFile FileName="Api.disco" MetadataType="Disco" ID="33fea9b2-79a4-4a8d-88e1-372572142184" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?disco" />
+    <MetadataFile FileName="Api3.xsd" MetadataType="Schema" ID="b842611c-e3d9-42e9-9379-70ead613f936" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd1" />
+    <MetadataFile FileName="Api4.xsd" MetadataType="Schema" ID="06fdd1e1-2d02-4cc4-a4d9-95dea2397acb" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd5" />
+    <MetadataFile FileName="Api5.xsd" MetadataType="Schema" ID="01d2729e-627d-483b-9a35-84fc6bb0f481" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd9" />
+    <MetadataFile FileName="Api6.xsd" MetadataType="Schema" ID="54e63f46-a371-4094-b56f-039b1d405373" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd11" />
+    <MetadataFile FileName="Api7.xsd" MetadataType="Schema" ID="5d3f1d6c-335d-49d4-a88c-f300f835a3be" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd13" />
+    <MetadataFile FileName="Api1.wsdl" MetadataType="Wsdl" ID="47e4fda1-5821-41b4-927d-6d16eb2c2fd2" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?wsdl" />
+    <MetadataFile FileName="Api8.xsd" MetadataType="Schema" ID="b2cf4413-9fbc-423a-b115-22db13851407" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd0" />
+    <MetadataFile FileName="Api9.xsd" MetadataType="Schema" ID="9b888e7f-7b4a-4e28-9566-4c755c9fe394" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd4" />
+    <MetadataFile FileName="Api10.xsd" MetadataType="Schema" ID="828f2976-36e5-4859-a488-0e49db257147" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd8" />
+    <MetadataFile FileName="Api11.xsd" MetadataType="Schema" ID="9e37dcb2-c505-4991-a0d9-37b9bc53d0f8" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd12" />
+    <MetadataFile FileName="Api12.xsd" MetadataType="Schema" ID="6cfffb75-d597-4c71-aeee-c4fbc25b90c3" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd3" />
+    <MetadataFile FileName="Api13.xsd" MetadataType="Schema" ID="275b52a1-2e34-44a3-8aa3-a56022690a47" SourceId="1" SourceUrl="http://api.save.tv/v2/Api.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

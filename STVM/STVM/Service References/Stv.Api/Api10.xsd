@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.User" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.User" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" />
+  <xs:complexType name="Login">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q1:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserStatus" nillable="true" type="tns:UserStatus">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Login" nillable="true" type="tns:Login" />
+  <xs:complexType name="UserStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdultCheckOKFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContractIsRunning" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DefaultRecordingFormatId" type="xs:int" />
+      <xs:element minOccurs="0" name="HasContractLock" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasPremiumStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LongRecordingEndBufferTime" type="xs:int" />
+      <xs:element minOccurs="0" name="LongRecordingStartBufferTime" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortRecordingEndBufferTime" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortRecordingStartBufferTime" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserStatus" nillable="true" type="tns:UserStatus" />
+  <xs:complexType name="LoggedIn">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q2:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsLoggedIn" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoggedIn" nillable="true" type="tns:LoggedIn" />
+  <xs:complexType name="UserUuid">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q3:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserUuid" nillable="true" type="tns:UserUuid" />
+  <xs:complexType name="UserStatusRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" base="q4:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserStatus" nillable="true" type="tns:UserStatus">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserStatusRequest" nillable="true" type="tns:UserStatusRequest" />
+</xs:schema>

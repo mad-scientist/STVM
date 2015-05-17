@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://api.save.tv/v2/API" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://api.save.tv/v2/API" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://api.save.tv/v2/API/Imports">
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Session" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Common" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.StaticData" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Message" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Telecast" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.User" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Star" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Record" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Channel" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.VideoArchive" />
+      <xsd:import schemaLocation="http://api.save.tv/v2/Api.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/SmilingBits.Data.BusinessLayer.Stv.Api.Contract.Download" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IApi_CreateSession_InputMessage">
+    <wsdl:part xmlns:q1="http://tempuri.org/" name="parameters" element="q1:CreateSession" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateSession_OutputMessage">
+    <wsdl:part xmlns:q2="http://tempuri.org/" name="parameters" element="q2:CreateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_InitApplication_InputMessage">
+    <wsdl:part xmlns:q3="http://tempuri.org/" name="parameters" element="q3:InitApplication" />
+  </wsdl:message>
+  <wsdl:message name="IApi_InitApplication_OutputMessage">
+    <wsdl:part xmlns:q4="http://tempuri.org/" name="parameters" element="q4:InitApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetSessionExpiry_InputMessage">
+    <wsdl:part xmlns:q5="http://tempuri.org/" name="parameters" element="q5:GetSessionExpiry" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetSessionExpiry_OutputMessage">
+    <wsdl:part xmlns:q6="http://tempuri.org/" name="parameters" element="q6:GetSessionExpiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetBufferTimeList_InputMessage">
+    <wsdl:part xmlns:q7="http://tempuri.org/" name="parameters" element="q7:GetBufferTimeList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetBufferTimeList_OutputMessage">
+    <wsdl:part xmlns:q8="http://tempuri.org/" name="parameters" element="q8:GetBufferTimeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetErrorCodeList_InputMessage">
+    <wsdl:part xmlns:q9="http://tempuri.org/" name="parameters" element="q9:GetErrorCodeList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetErrorCodeList_OutputMessage">
+    <wsdl:part xmlns:q10="http://tempuri.org/" name="parameters" element="q10:GetErrorCodeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTvCategoryList_InputMessage">
+    <wsdl:part xmlns:q11="http://tempuri.org/" name="parameters" element="q11:GetTvCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTvCategoryList_OutputMessage">
+    <wsdl:part xmlns:q12="http://tempuri.org/" name="parameters" element="q12:GetTvCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTvStationGroupList_InputMessage">
+    <wsdl:part xmlns:q13="http://tempuri.org/" name="parameters" element="q13:GetTvStationGroupList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTvStationGroupList_OutputMessage">
+    <wsdl:part xmlns:q14="http://tempuri.org/" name="parameters" element="q14:GetTvStationGroupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTvStationList_InputMessage">
+    <wsdl:part xmlns:q15="http://tempuri.org/" name="parameters" element="q15:GetTvStationList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTvStationList_OutputMessage">
+    <wsdl:part xmlns:q16="http://tempuri.org/" name="parameters" element="q16:GetTvStationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetShopConfig_InputMessage">
+    <wsdl:part xmlns:q17="http://tempuri.org/" name="parameters" element="q17:GetShopConfig" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetShopConfig_OutputMessage">
+    <wsdl:part xmlns:q18="http://tempuri.org/" name="parameters" element="q18:GetShopConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetMessages_InputMessage">
+    <wsdl:part xmlns:q19="http://tempuri.org/" name="parameters" element="q19:GetMessages" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetMessages_OutputMessage">
+    <wsdl:part xmlns:q20="http://tempuri.org/" name="parameters" element="q20:GetMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByNow_InputMessage">
+    <wsdl:part xmlns:q21="http://tempuri.org/" name="parameters" element="q21:GetTelecastListByNow" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByNow_OutputMessage">
+    <wsdl:part xmlns:q22="http://tempuri.org/" name="parameters" element="q22:GetTelecastListByNowResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByAfter_InputMessage">
+    <wsdl:part xmlns:q23="http://tempuri.org/" name="parameters" element="q23:GetTelecastListByAfter" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByAfter_OutputMessage">
+    <wsdl:part xmlns:q24="http://tempuri.org/" name="parameters" element="q24:GetTelecastListByAfterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByPrimeTime_InputMessage">
+    <wsdl:part xmlns:q25="http://tempuri.org/" name="parameters" element="q25:GetTelecastListByPrimeTime" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByPrimeTime_OutputMessage">
+    <wsdl:part xmlns:q26="http://tempuri.org/" name="parameters" element="q26:GetTelecastListByPrimeTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByHighlights_InputMessage">
+    <wsdl:part xmlns:q27="http://tempuri.org/" name="parameters" element="q27:GetTelecastListByHighlights" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByHighlights_OutputMessage">
+    <wsdl:part xmlns:q28="http://tempuri.org/" name="parameters" element="q28:GetTelecastListByHighlightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByHighlightsForCategory_InputMessage">
+    <wsdl:part xmlns:q29="http://tempuri.org/" name="parameters" element="q29:GetTelecastListByHighlightsForCategory" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByHighlightsForCategory_OutputMessage">
+    <wsdl:part xmlns:q30="http://tempuri.org/" name="parameters" element="q30:GetTelecastListByHighlightsForCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByFullTextSearch_InputMessage">
+    <wsdl:part xmlns:q31="http://tempuri.org/" name="parameters" element="q31:GetTelecastListByFullTextSearch" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByFullTextSearch_OutputMessage">
+    <wsdl:part xmlns:q32="http://tempuri.org/" name="parameters" element="q32:GetTelecastListByFullTextSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByCategory_InputMessage">
+    <wsdl:part xmlns:q33="http://tempuri.org/" name="parameters" element="q33:GetTelecastListByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByCategory_OutputMessage">
+    <wsdl:part xmlns:q34="http://tempuri.org/" name="parameters" element="q34:GetTelecastListByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByTvStationAndDay_InputMessage">
+    <wsdl:part xmlns:q35="http://tempuri.org/" name="parameters" element="q35:GetTelecastListByTvStationAndDay" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByTvStationAndDay_OutputMessage">
+    <wsdl:part xmlns:q36="http://tempuri.org/" name="parameters" element="q36:GetTelecastListByTvStationAndDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByStarlet_InputMessage">
+    <wsdl:part xmlns:q37="http://tempuri.org/" name="parameters" element="q37:GetTelecastListByStarlet" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByStarlet_OutputMessage">
+    <wsdl:part xmlns:q38="http://tempuri.org/" name="parameters" element="q38:GetTelecastListByStarletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetFollowingTelecasts_InputMessage">
+    <wsdl:part xmlns:q39="http://tempuri.org/" name="parameters" element="q39:GetFollowingTelecasts" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetFollowingTelecasts_OutputMessage">
+    <wsdl:part xmlns:q40="http://tempuri.org/" name="parameters" element="q40:GetFollowingTelecastsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastDetail_InputMessage">
+    <wsdl:part xmlns:q41="http://tempuri.org/" name="parameters" element="q41:GetTelecastDetail" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastDetail_OutputMessage">
+    <wsdl:part xmlns:q42="http://tempuri.org/" name="parameters" element="q42:GetTelecastDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_Login_InputMessage">
+    <wsdl:part xmlns:q43="http://tempuri.org/" name="parameters" element="q43:Login" />
+  </wsdl:message>
+  <wsdl:message name="IApi_Login_OutputMessage">
+    <wsdl:part xmlns:q44="http://tempuri.org/" name="parameters" element="q44:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_IsLoggedIn_InputMessage">
+    <wsdl:part xmlns:q45="http://tempuri.org/" name="parameters" element="q45:IsLoggedIn" />
+  </wsdl:message>
+  <wsdl:message name="IApi_IsLoggedIn_OutputMessage">
+    <wsdl:part xmlns:q46="http://tempuri.org/" name="parameters" element="q46:IsLoggedInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetUserUuid_InputMessage">
+    <wsdl:part xmlns:q47="http://tempuri.org/" name="parameters" element="q47:GetUserUuid" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetUserUuid_OutputMessage">
+    <wsdl:part xmlns:q48="http://tempuri.org/" name="parameters" element="q48:GetUserUuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetUserStatus_InputMessage">
+    <wsdl:part xmlns:q49="http://tempuri.org/" name="parameters" element="q49:GetUserStatus" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetUserStatus_OutputMessage">
+    <wsdl:part xmlns:q50="http://tempuri.org/" name="parameters" element="q50:GetUserStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_SetAdultCheckFlag_InputMessage">
+    <wsdl:part xmlns:q51="http://tempuri.org/" name="parameters" element="q51:SetAdultCheckFlag" />
+  </wsdl:message>
+  <wsdl:message name="IApi_SetAdultCheckFlag_OutputMessage">
+    <wsdl:part xmlns:q52="http://tempuri.org/" name="parameters" element="q52:SetAdultCheckFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_Logout_InputMessage">
+    <wsdl:part xmlns:q53="http://tempuri.org/" name="parameters" element="q53:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IApi_Logout_OutputMessage">
+    <wsdl:part xmlns:q54="http://tempuri.org/" name="parameters" element="q54:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_ActivateClient_InputMessage">
+    <wsdl:part xmlns:q55="http://tempuri.org/" name="parameters" element="q55:ActivateClient" />
+  </wsdl:message>
+  <wsdl:message name="IApi_ActivateClient_OutputMessage">
+    <wsdl:part xmlns:q56="http://tempuri.org/" name="parameters" element="q56:ActivateClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStarletListByBithdayToday_InputMessage">
+    <wsdl:part xmlns:q57="http://tempuri.org/" name="parameters" element="q57:GetStarletListByBithdayToday" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStarletListByBithdayToday_OutputMessage">
+    <wsdl:part xmlns:q58="http://tempuri.org/" name="parameters" element="q58:GetStarletListByBithdayTodayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStarletListBySearch_InputMessage">
+    <wsdl:part xmlns:q59="http://tempuri.org/" name="parameters" element="q59:GetStarletListBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStarletListBySearch_OutputMessage">
+    <wsdl:part xmlns:q60="http://tempuri.org/" name="parameters" element="q60:GetStarletListBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStarletListByHighlightOfWeek_InputMessage">
+    <wsdl:part xmlns:q61="http://tempuri.org/" name="parameters" element="q61:GetStarletListByHighlightOfWeek" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStarletListByHighlightOfWeek_OutputMessage">
+    <wsdl:part xmlns:q62="http://tempuri.org/" name="parameters" element="q62:GetStarletListByHighlightOfWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStarletDetail_InputMessage">
+    <wsdl:part xmlns:q63="http://tempuri.org/" name="parameters" element="q63:GetStarletDetail" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStarletDetail_OutputMessage">
+    <wsdl:part xmlns:q64="http://tempuri.org/" name="parameters" element="q64:GetStarletDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateRecord_InputMessage">
+    <wsdl:part xmlns:q65="http://tempuri.org/" name="parameters" element="q65:CreateRecord" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateRecord_OutputMessage">
+    <wsdl:part xmlns:q66="http://tempuri.org/" name="parameters" element="q66:CreateRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateNotUserRecord_InputMessage">
+    <wsdl:part xmlns:q67="http://tempuri.org/" name="parameters" element="q67:CreateNotUserRecord" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateNotUserRecord_OutputMessage">
+    <wsdl:part xmlns:q68="http://tempuri.org/" name="parameters" element="q68:CreateNotUserRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_DeleteRecord_InputMessage">
+    <wsdl:part xmlns:q69="http://tempuri.org/" name="parameters" element="q69:DeleteRecord" />
+  </wsdl:message>
+  <wsdl:message name="IApi_DeleteRecord_OutputMessage">
+    <wsdl:part xmlns:q70="http://tempuri.org/" name="parameters" element="q70:DeleteRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetRecordingFormatList_InputMessage">
+    <wsdl:part xmlns:q71="http://tempuri.org/" name="parameters" element="q71:GetRecordingFormatList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetRecordingFormatList_OutputMessage">
+    <wsdl:part xmlns:q72="http://tempuri.org/" name="parameters" element="q72:GetRecordingFormatListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetChannelTimeFrameList_InputMessage">
+    <wsdl:part xmlns:q73="http://tempuri.org/" name="parameters" element="q73:GetChannelTimeFrameList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetChannelTimeFrameList_OutputMessage">
+    <wsdl:part xmlns:q74="http://tempuri.org/" name="parameters" element="q74:GetChannelTimeFrameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetChannelList_InputMessage">
+    <wsdl:part xmlns:q75="http://tempuri.org/" name="parameters" element="q75:GetChannelList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetChannelList_OutputMessage">
+    <wsdl:part xmlns:q76="http://tempuri.org/" name="parameters" element="q76:GetChannelListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByChannel_InputMessage">
+    <wsdl:part xmlns:q77="http://tempuri.org/" name="parameters" element="q77:GetTelecastListByChannel" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetTelecastListByChannel_OutputMessage">
+    <wsdl:part xmlns:q78="http://tempuri.org/" name="parameters" element="q78:GetTelecastListByChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_DeleteChannel_InputMessage">
+    <wsdl:part xmlns:q79="http://tempuri.org/" name="parameters" element="q79:DeleteChannel" />
+  </wsdl:message>
+  <wsdl:message name="IApi_DeleteChannel_OutputMessage">
+    <wsdl:part xmlns:q80="http://tempuri.org/" name="parameters" element="q80:DeleteChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_RecordChannel_InputMessage">
+    <wsdl:part xmlns:q81="http://tempuri.org/" name="parameters" element="q81:RecordChannel" />
+  </wsdl:message>
+  <wsdl:message name="IApi_RecordChannel_OutputMessage">
+    <wsdl:part xmlns:q82="http://tempuri.org/" name="parameters" element="q82:RecordChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateChannelByTitle_InputMessage">
+    <wsdl:part xmlns:q83="http://tempuri.org/" name="parameters" element="q83:CreateChannelByTitle" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateChannelByTitle_OutputMessage">
+    <wsdl:part xmlns:q84="http://tempuri.org/" name="parameters" element="q84:CreateChannelByTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateChannelByStarlet_InputMessage">
+    <wsdl:part xmlns:q85="http://tempuri.org/" name="parameters" element="q85:CreateChannelByStarlet" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateChannelByStarlet_OutputMessage">
+    <wsdl:part xmlns:q86="http://tempuri.org/" name="parameters" element="q86:CreateChannelByStarletResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateChannelManual_InputMessage">
+    <wsdl:part xmlns:q87="http://tempuri.org/" name="parameters" element="q87:CreateChannelManual" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateChannelManual_OutputMessage">
+    <wsdl:part xmlns:q88="http://tempuri.org/" name="parameters" element="q88:CreateChannelManualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateChannelByTelecast_InputMessage">
+    <wsdl:part xmlns:q89="http://tempuri.org/" name="parameters" element="q89:CreateChannelByTelecast" />
+  </wsdl:message>
+  <wsdl:message name="IApi_CreateChannelByTelecast_OutputMessage">
+    <wsdl:part xmlns:q90="http://tempuri.org/" name="parameters" element="q90:CreateChannelByTelecastResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetVideoArchiveList_InputMessage">
+    <wsdl:part xmlns:q91="http://tempuri.org/" name="parameters" element="q91:GetVideoArchiveList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetVideoArchiveList_OutputMessage">
+    <wsdl:part xmlns:q92="http://tempuri.org/" name="parameters" element="q92:GetVideoArchiveListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_SimpleParamsGetVideoArchiveList_InputMessage">
+    <wsdl:part xmlns:q93="http://tempuri.org/" name="parameters" element="q93:SimpleParamsGetVideoArchiveList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_SimpleParamsGetVideoArchiveList_OutputMessage">
+    <wsdl:part xmlns:q94="http://tempuri.org/" name="parameters" element="q94:SimpleParamsGetVideoArchiveListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetVideoArchiveDelta_InputMessage">
+    <wsdl:part xmlns:q95="http://tempuri.org/" name="parameters" element="q95:GetVideoArchiveDelta" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetVideoArchiveDelta_OutputMessage">
+    <wsdl:part xmlns:q96="http://tempuri.org/" name="parameters" element="q96:GetVideoArchiveDeltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetAdFreeState_InputMessage">
+    <wsdl:part xmlns:q97="http://tempuri.org/" name="parameters" element="q97:GetAdFreeState" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetAdFreeState_OutputMessage">
+    <wsdl:part xmlns:q98="http://tempuri.org/" name="parameters" element="q98:GetAdFreeStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_InternalGetVideoArchiveList_InputMessage">
+    <wsdl:part xmlns:q99="http://tempuri.org/" name="parameters" element="q99:InternalGetVideoArchiveList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_InternalGetVideoArchiveList_OutputMessage">
+    <wsdl:part xmlns:q100="http://tempuri.org/" name="parameters" element="q100:InternalGetVideoArchiveListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetSimultaneousDownloadConnectionCount_InputMessage">
+    <wsdl:part xmlns:q101="http://tempuri.org/" name="parameters" element="q101:GetSimultaneousDownloadConnectionCount" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetSimultaneousDownloadConnectionCount_OutputMessage">
+    <wsdl:part xmlns:q102="http://tempuri.org/" name="parameters" element="q102:GetSimultaneousDownloadConnectionCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStreamingUrl_InputMessage">
+    <wsdl:part xmlns:q103="http://tempuri.org/" name="parameters" element="q103:GetStreamingUrl" />
+  </wsdl:message>
+  <wsdl:message name="IApi_GetStreamingUrl_OutputMessage">
+    <wsdl:part xmlns:q104="http://tempuri.org/" name="parameters" element="q104:GetStreamingUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_InternalGetStreamingUrl_InputMessage">
+    <wsdl:part xmlns:q105="http://tempuri.org/" name="parameters" element="q105:InternalGetStreamingUrl" />
+  </wsdl:message>
+  <wsdl:message name="IApi_InternalGetStreamingUrl_OutputMessage">
+    <wsdl:part xmlns:q106="http://tempuri.org/" name="parameters" element="q106:InternalGetStreamingUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_InternalGetHdTvStationList_InputMessage">
+    <wsdl:part xmlns:q107="http://tempuri.org/" name="parameters" element="q107:InternalGetHdTvStationList" />
+  </wsdl:message>
+  <wsdl:message name="IApi_InternalGetHdTvStationList_OutputMessage">
+    <wsdl:part xmlns:q108="http://tempuri.org/" name="parameters" element="q108:InternalGetHdTvStationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApi_NagiosCheck_InputMessage">
+    <wsdl:part xmlns:q109="http://tempuri.org/" name="parameters" element="q109:NagiosCheck" />
+  </wsdl:message>
+  <wsdl:message name="IApi_NagiosCheck_OutputMessage">
+    <wsdl:part xmlns:q110="http://tempuri.org/" name="parameters" element="q110:NagiosCheckResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IApi">
+    <wsdl:operation name="CreateSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISession/CreateSession" message="tns:IApi_CreateSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISession/CreateSessionResponse" message="tns:IApi_CreateSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISession/InitApplication" message="tns:IApi_InitApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISession/InitApplicationResponse" message="tns:IApi_InitApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionExpiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISession/GetSessionExpiry" message="tns:IApi_GetSessionExpiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISession/GetSessionExpiryResponse" message="tns:IApi_GetSessionExpiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBufferTimeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStaticData/GetBufferTimeList" message="tns:IApi_GetBufferTimeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStaticData/GetBufferTimeListResponse" message="tns:IApi_GetBufferTimeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorCodeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStaticData/GetErrorCodeList" message="tns:IApi_GetErrorCodeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStaticData/GetErrorCodeListResponse" message="tns:IApi_GetErrorCodeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTvCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStaticData/GetTvCategoryList" message="tns:IApi_GetTvCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStaticData/GetTvCategoryListResponse" message="tns:IApi_GetTvCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTvStationGroupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStaticData/GetTvStationGroupList" message="tns:IApi_GetTvStationGroupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStaticData/GetTvStationGroupListResponse" message="tns:IApi_GetTvStationGroupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTvStationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStaticData/GetTvStationList" message="tns:IApi_GetTvStationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStaticData/GetTvStationListResponse" message="tns:IApi_GetTvStationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShopConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStaticData/GetShopConfig" message="tns:IApi_GetShopConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStaticData/GetShopConfigResponse" message="tns:IApi_GetShopConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMessage/GetMessages" message="tns:IApi_GetMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMessage/GetMessagesResponse" message="tns:IApi_GetMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByNow">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByNow" message="tns:IApi_GetTelecastListByNow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByNowResponse" message="tns:IApi_GetTelecastListByNow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByAfter">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByAfter" message="tns:IApi_GetTelecastListByAfter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByAfterResponse" message="tns:IApi_GetTelecastListByAfter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByPrimeTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByPrimeTime" message="tns:IApi_GetTelecastListByPrimeTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByPrimeTimeResponse" message="tns:IApi_GetTelecastListByPrimeTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByHighlights">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByHighlights" message="tns:IApi_GetTelecastListByHighlights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByHighlightsResponse" message="tns:IApi_GetTelecastListByHighlights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByHighlightsForCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByHighlightsForCategory" message="tns:IApi_GetTelecastListByHighlightsForCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByHighlightsForCategoryResponse" message="tns:IApi_GetTelecastListByHighlightsForCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByFullTextSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByFullTextSearch" message="tns:IApi_GetTelecastListByFullTextSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByFullTextSearchResponse" message="tns:IApi_GetTelecastListByFullTextSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByCategory" message="tns:IApi_GetTelecastListByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByCategoryResponse" message="tns:IApi_GetTelecastListByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByTvStationAndDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByTvStationAndDay" message="tns:IApi_GetTelecastListByTvStationAndDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByTvStationAndDayResponse" message="tns:IApi_GetTelecastListByTvStationAndDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByStarlet">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByStarlet" message="tns:IApi_GetTelecastListByStarlet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastListByStarletResponse" message="tns:IApi_GetTelecastListByStarlet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowingTelecasts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetFollowingTelecasts" message="tns:IApi_GetFollowingTelecasts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetFollowingTelecastsResponse" message="tns:IApi_GetFollowingTelecasts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITelecast/GetTelecastDetail" message="tns:IApi_GetTelecastDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITelecast/GetTelecastDetailResponse" message="tns:IApi_GetTelecastDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/Login" message="tns:IApi_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/LoginResponse" message="tns:IApi_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsLoggedIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/IsLoggedIn" message="tns:IApi_IsLoggedIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/IsLoggedInResponse" message="tns:IApi_IsLoggedIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserUuid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetUserUuid" message="tns:IApi_GetUserUuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetUserUuidResponse" message="tns:IApi_GetUserUuid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetUserStatus" message="tns:IApi_GetUserStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetUserStatusResponse" message="tns:IApi_GetUserStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAdultCheckFlag">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/SetAdultCheckFlag" message="tns:IApi_SetAdultCheckFlag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/SetAdultCheckFlagResponse" message="tns:IApi_SetAdultCheckFlag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/Logout" message="tns:IApi_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/LogoutResponse" message="tns:IApi_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/ActivateClient" message="tns:IApi_ActivateClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/ActivateClientResponse" message="tns:IApi_ActivateClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStarletListByBithdayToday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStar/GetStarletListByBithdayToday" message="tns:IApi_GetStarletListByBithdayToday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStar/GetStarletListByBithdayTodayResponse" message="tns:IApi_GetStarletListByBithdayToday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStarletListBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStar/GetStarletListBySearch" message="tns:IApi_GetStarletListBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStar/GetStarletListBySearchResponse" message="tns:IApi_GetStarletListBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStarletListByHighlightOfWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStar/GetStarletListByHighlightOfWeek" message="tns:IApi_GetStarletListByHighlightOfWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStar/GetStarletListByHighlightOfWeekResponse" message="tns:IApi_GetStarletListByHighlightOfWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStarletDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStar/GetStarletDetail" message="tns:IApi_GetStarletDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStar/GetStarletDetailResponse" message="tns:IApi_GetStarletDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecord/CreateRecord" message="tns:IApi_CreateRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecord/CreateRecordResponse" message="tns:IApi_CreateRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNotUserRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecord/CreateNotUserRecord" message="tns:IApi_CreateNotUserRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecord/CreateNotUserRecordResponse" message="tns:IApi_CreateNotUserRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecord/DeleteRecord" message="tns:IApi_DeleteRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecord/DeleteRecordResponse" message="tns:IApi_DeleteRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordingFormatList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecord/GetRecordingFormatList" message="tns:IApi_GetRecordingFormatList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecord/GetRecordingFormatListResponse" message="tns:IApi_GetRecordingFormatList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTimeFrameList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChannel/GetChannelTimeFrameList" message="tns:IApi_GetChannelTimeFrameList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChannel/GetChannelTimeFrameListResponse" message="tns:IApi_GetChannelTimeFrameList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChannel/GetChannelList" message="tns:IApi_GetChannelList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChannel/GetChannelListResponse" message="tns:IApi_GetChannelList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelecastListByChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChannel/GetTelecastListByChannel" message="tns:IApi_GetTelecastListByChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChannel/GetTelecastListByChannelResponse" message="tns:IApi_GetTelecastListByChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChannel/DeleteChannel" message="tns:IApi_DeleteChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChannel/DeleteChannelResponse" message="tns:IApi_DeleteChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecordChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChannel/RecordChannel" message="tns:IApi_RecordChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChannel/RecordChannelResponse" message="tns:IApi_RecordChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateChannelByTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChannel/CreateChannelByTitle" message="tns:IApi_CreateChannelByTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChannel/CreateChannelByTitleResponse" message="tns:IApi_CreateChannelByTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateChannelByStarlet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChannel/CreateChannelByStarlet" message="tns:IApi_CreateChannelByStarlet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChannel/CreateChannelByStarletResponse" message="tns:IApi_CreateChannelByStarlet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateChannelManual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChannel/CreateChannelManual" message="tns:IApi_CreateChannelManual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChannel/CreateChannelManualResponse" message="tns:IApi_CreateChannelManual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateChannelByTelecast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChannel/CreateChannelByTelecast" message="tns:IApi_CreateChannelByTelecast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChannel/CreateChannelByTelecastResponse" message="tns:IApi_CreateChannelByTelecast_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVideoArchiveList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVideoArchive/GetVideoArchiveList" message="tns:IApi_GetVideoArchiveList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVideoArchive/GetVideoArchiveListResponse" message="tns:IApi_GetVideoArchiveList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SimpleParamsGetVideoArchiveList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVideoArchive/SimpleParamsGetVideoArchiveList" message="tns:IApi_SimpleParamsGetVideoArchiveList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVideoArchive/SimpleParamsGetVideoArchiveListResponse" message="tns:IApi_SimpleParamsGetVideoArchiveList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVideoArchiveDelta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVideoArchive/GetVideoArchiveDelta" message="tns:IApi_GetVideoArchiveDelta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVideoArchive/GetVideoArchiveDeltaResponse" message="tns:IApi_GetVideoArchiveDelta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdFreeState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVideoArchive/GetAdFreeState" message="tns:IApi_GetAdFreeState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVideoArchive/GetAdFreeStateResponse" message="tns:IApi_GetAdFreeState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InternalGetVideoArchiveList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVideoArchive/InternalGetVideoArchiveList" message="tns:IApi_InternalGetVideoArchiveList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVideoArchive/InternalGetVideoArchiveListResponse" message="tns:IApi_InternalGetVideoArchiveList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSimultaneousDownloadConnectionCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDownload/GetSimultaneousDownloadConnectionCount" message="tns:IApi_GetSimultaneousDownloadConnectionCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDownload/GetSimultaneousDownloadConnectionCountResponse" message="tns:IApi_GetSimultaneousDownloadConnectionCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStreamingUrl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDownload/GetStreamingUrl" message="tns:IApi_GetStreamingUrl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDownload/GetStreamingUrlResponse" message="tns:IApi_GetStreamingUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InternalGetStreamingUrl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDownload/InternalGetStreamingUrl" message="tns:IApi_InternalGetStreamingUrl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDownload/InternalGetStreamingUrlResponse" message="tns:IApi_InternalGetStreamingUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InternalGetHdTvStationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDownload/InternalGetHdTvStationList" message="tns:IApi_InternalGetHdTvStationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDownload/InternalGetHdTvStationListResponse" message="tns:IApi_InternalGetHdTvStationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NagiosCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/INagiosCheck/NagiosCheck" message="tns:IApi_NagiosCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INagiosCheck/NagiosCheckResponse" message="tns:IApi_NagiosCheck_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
