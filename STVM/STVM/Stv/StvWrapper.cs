@@ -1182,7 +1182,7 @@ namespace STVM.Stv
             {
                 if (Query.Filter.SearchText != "")
                 {
-                    stv.GetTelecastListByFullTextSearchAsync(SessionId, Query.Filter.SearchText, 0, -1, Query);
+                    stv.GetTelecastListByFullTextSearchAsync(SessionId, Query.Filter.SearchText, 0, 1000, Query);
                 }
                 else
                 {
