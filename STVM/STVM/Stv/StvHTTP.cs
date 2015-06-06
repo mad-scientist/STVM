@@ -169,8 +169,8 @@ namespace STVM.Stv.Http
                 PostURL(stvServerURL + stvLoginURL);
 
                 // successful login returns redirect to http://www.save.tv/STV/M/misc/miscShowFrameSet.cfm
-                stvLoginSuccess = (stvResponse.StatusCode == HttpStatusCode.Redirect) &&
-                                  (stvResponse.Headers["Location"] == "http://www.save.tv/STV/M/misc/miscShowFrameSet.cfm");
+                stvLoginSuccess = (stvResponse.StatusCode == HttpStatusCode.Found) &&
+                                  (stvResponse.Headers["Location"] == "/STV/M/misc/miscShowFrameSet.cfm");
                 
                 if (stvLoginSuccess)
                 {

@@ -647,38 +647,37 @@ namespace STVM.Stv
 
                 Query.stvFilename = Response.Filename;
 
-                //if (!DownloadQueue.ApiMethod)
-                //HD aktuell immer über HTTP laden   ### seit 05.02.2015 nicht mehr nötig
-                //if (Query.Format == StvVideoFormats.HD)
-                //{
-                //    Cursor.Current = Cursors.WaitCursor;
-                //    // Web Interface initialisieren
-                //    stvHTTP stvOldInterface = new stvHTTP();
-                //    stvOldInterface.Username = Username;
-                //    stvOldInterface.Password = Password;
-                //    StvHttpVideoFormat oldFormat = new StvHttpVideoFormat();
-                //    switch (Query.Format)
-                //    {
-                //        case StvVideoFormats.Mobile:
-                //            oldFormat = StvHttpVideoFormat.Mobile;
-                //            break;
-                //        case StvVideoFormats.HD:
-                //            oldFormat = StvHttpVideoFormat.HD;
-                //            break;
-                //        default:
-                //            oldFormat = StvHttpVideoFormat.HQ;
-                //            break;
-                //    }
+                //HD immer über HTTP laden   
+                if (Query.Format == StvVideoFormats.HD)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    // Web Interface initialisieren
+                    stvHTTP stvOldInterface = new stvHTTP();
+                    stvOldInterface.Username = Username;
+                    stvOldInterface.Password = Password;
+                    StvHttpVideoFormat oldFormat = new StvHttpVideoFormat();
+                    switch (Query.Format)
+                    {
+                        case StvVideoFormats.Mobile:
+                            oldFormat = StvHttpVideoFormat.Mobile;
+                            break;
+                        case StvVideoFormats.HD:
+                            oldFormat = StvHttpVideoFormat.HD;
+                            break;
+                        default:
+                            oldFormat = StvHttpVideoFormat.HQ;
+                            break;
+                    }
 
-                //    Query.stvDownloadURL = stvOldInterface.GetDownloadURL(Query.TelecastID, oldFormat, Query.AdFree);
-                //    Cursor.Current = Cursors.Default;
+                    Query.stvDownloadURL = stvOldInterface.GetDownloadURL(Query.TelecastID, oldFormat, Query.AdFree);
+                    Cursor.Current = Cursors.Default;
 
-                //    // Inkonsistente Dateinamen der Downloads: API liefert aufeinanderfolgende Sonderzeichen als zwei Unterstriche, 
-                //    // das Web-Interface nur ein Unterstrich
-                //    Query.stvFilename = Query.stvFilename.Replace("__", "_");
+                    // Inkonsistente Dateinamen der Downloads: API liefert aufeinanderfolgende Sonderzeichen als zwei Unterstriche, 
+                    // das Web-Interface nur ein Unterstrich
+                    Query.stvFilename = Query.stvFilename.Replace("__", "_");
 
-                //}
-                //else
+                }
+                else
                 {
                     Query.stvDownloadURL = Response.DownloadUrl;
                 }

@@ -1685,6 +1685,8 @@ namespace STVM
                 download.localFilename = Path.GetFileNameWithoutExtension(download.localFilename) + Path.GetExtension(download.stvFilename);
                 download.Status = DownloadStatus.Submitting;
             }
+
+            downloader.RunRange(runDownloads);
         }
 
         private void OnDownloadUpdateEvent(DownloadUpdateEventArgs e)

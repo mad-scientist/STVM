@@ -145,6 +145,11 @@ namespace STVM.Download
             this.Downloads.AddRange(Downloads);
         }
 
+        public void RunRange(IEnumerable<tDownload> Downloads)
+        {
+            dlm.AddRange(Downloads);
+        }
+
         public void CancelRange(IEnumerable<tDownload> Downloads)
         {
             dlm.CancelRange(Downloads);
