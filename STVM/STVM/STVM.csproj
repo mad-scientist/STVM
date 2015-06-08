@@ -68,11 +68,15 @@
     <Compile Include="Dialogs\fmDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\fmDelete.Designer.cs" />
+    <Compile Include="Dialogs\fmDelete.Designer.cs">
+      <DependentUpon>fmDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\fmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\fmLogin.Designer.cs" />
+        <Compile Include="Dialogs\fmLogin.Designer.cs">
+      <DependentUpon>fmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Download\dlmBase.cs" />
     <Compile Include="Download\dlmExternal.cs" />
     <Compile Include="Download\dlmInternal.cs" />
@@ -84,7 +88,9 @@
     <Compile Include="fmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fmMain.Designer.cs" />
+    <Compile Include="fmMain.Designer.cs">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="ListViewSorter.cs" />
     <Compile Include="Program.cs" />
@@ -103,7 +109,9 @@
     <Compile Include="Wrapper\fmTvdbEpisodes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Wrapper\fmTvdbEpisodes.Designer.cs" />
+    <Compile Include="Wrapper\fmTvdbEpisodes.Designer.cs">
+      <DependentUpon>fmTvdbEpisodes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wrapper\httpRequest.cs" />
     <Compile Include="Wrapper\JdlWrapper.cs" />
     <Compile Include="Wrapper\LocalWrapper.cs" />
@@ -111,19 +119,22 @@
     <Compile Include="Wrapper\TmdbWrapper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Wrapper\TmdbWrapper.Designer.cs" />
+    <Compile Include="Wrapper\TmdbWrapper.Designer.cs">
+      <DependentUpon>TmdbWrapper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wrapper\TvdbWrapper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Wrapper\TvdbWrapper.designer.cs" />
+    <Compile Include="Wrapper\TvdbWrapper.designer.cs">
+      <DependentUpon>TvdbWrapper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wrapper\WunschlisteWrapper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Wrapper\WunschlisteWrapper.Designer.cs" />
+    <Compile Include="Wrapper\WunschlisteWrapper.Designer.cs">
+      <DependentUpon>WunschlisteWrapper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wrapper\XbmcWrapper.cs" />
-    <EmbeddedResource Include="Dialogs\fmDelete.resx" />
-    <EmbeddedResource Include="Dialogs\fmLogin.resx" />
-    <EmbeddedResource Include="fmMain.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -134,10 +145,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Wrapper\fmTvdbEpisodes.resx" />
-    <EmbeddedResource Include="Wrapper\TmdbWrapper.resx" />
-    <EmbeddedResource Include="Wrapper\TvdbWrapper.resx" />
-    <EmbeddedResource Include="Wrapper\WunschlisteWrapper.resx" />
+	    <EmbeddedResource Include="Dialogs\fmDelete.resx">
+      <DependentUpon>fmDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wrapper\fmTvdbEpisodes.resx">
+      <DependentUpon>fmTvdbEpisodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wrapper\TmdbWrapper.resx">
+      <DependentUpon>TmdbWrapper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wrapper\TvdbWrapper.resx">
+      <DependentUpon>TvdbWrapper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\fmLogin.resx">
+      <DependentUpon>fmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmMain.resx">
+      <DependentUpon>fmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wrapper\WunschlisteWrapper.resx">
+      <DependentUpon>WunschlisteWrapper.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
